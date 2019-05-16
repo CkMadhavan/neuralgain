@@ -64,7 +64,7 @@ def pred(arg):
     
     print(rate)
     
-    model= load_model("../Downloads/Grocery.h5")
+    model= load_model("Grocery.h5")
     c = model.predict(np.concatenate((iv,
                                 rate ,
                                 yo,
@@ -143,7 +143,7 @@ def rate(args):
     
     keras.backend.clear_session()
     
-    model= load_model("../Downloads/Grocery.h5")
+    model= load_model("Grocery.h5")
     c = model.predict(x)
     
     print(c)
