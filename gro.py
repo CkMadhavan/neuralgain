@@ -72,7 +72,7 @@ def pred(arg):
                                 outtype,
                                 locality,
                                 combined,
-                                outsize,) , axis = 0).reshape(1,18,1))[0][0]
+                                outsize) , axis = 0).reshape(1,18,1))[0][0]
     print(c)
     
     keras.backend.clear_session()
