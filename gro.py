@@ -24,6 +24,7 @@ def pred(arg):
     os = np.array([inputs[5]]).astype(int)
     yo = np.array([inputs[6]]).astype(int)
     itc = np.array([inputs[7]]).astype(int)
+    it = np.array([inputs[8]]).astype(int)
     
     if ifc == 0:
         fat = [1,0]
@@ -59,6 +60,15 @@ def pred(arg):
         outsize = [0,1,0]
     elif os == 2:
         outsize = [0,0,1]
+        
+    if it == 0:
+        type = [1,0,0,0]
+    elif ot == 1:
+        type = [0,1,0,0]
+    elif ot == 2:
+        type = [0,0,1,0]
+    elif ot == 3:
+        type = [0,0,0,1]
     
     keras.backend.clear_session()
     
@@ -77,7 +87,7 @@ def pred(arg):
     
     keras.backend.clear_session()
     
-    pred = str(int(math.ceil(c / 500.0)) * 500)
+    pred = str(int(math.ceil(c / 100.0)) * 100)
 
     return pred
 
