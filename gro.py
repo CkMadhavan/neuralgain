@@ -62,13 +62,37 @@ def pred(arg):
         outsize = [0,0,1]
         
     if it == 0:
-        type = [1,0,0,0]
-    elif ot == 1:
-        type = [0,1,0,0]
-    elif ot == 2:
-        type = [0,0,1,0]
-    elif ot == 3:
-        type = [0,0,0,1]
+        type = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    elif it == 1:
+        type = [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    elif it == 2:
+        type = [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    elif it == 3:
+        type = [0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+    elif it == 4:
+        type = [0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0]
+    elif it == 5:
+        type = [0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0]
+    elif it == 6:
+        type = [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0]
+    elif it == 7:
+        type = [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
+    elif it == 8:
+        type = [0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]
+    elif it == 9:
+        type = [0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0]
+    elif it == 10:
+        type = [0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0]
+    elif it == 11:
+        type = [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0]
+    elif it == 12:
+        type = [0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]
+    elif it == 13:
+        type = [0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0]
+    elif it == 14:
+        type = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0]
+    elif it == 15:
+        type = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
     
     keras.backend.clear_session()
     
@@ -78,11 +102,12 @@ def pred(arg):
     c = model.predict(np.concatenate((iv,
                                 rate ,
                                 yo,
+                                it,
                                 fat,
                                 outtype,
                                 locality,
                                 combined,
-                                outsize) , axis = 0).reshape(1,18,1))[0][0]
+                                outsize) , axis = 0).reshape(1,34,1))[0][0]
     print(c)
     
     keras.backend.clear_session()
