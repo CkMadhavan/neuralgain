@@ -98,7 +98,7 @@ def pred(arg):
     
     print(rate)
     
-    model= load_model("Grocery.h5")
+    model= load_model("Grocery1(2).h5")
     c = model.predict(np.concatenate((iv,
                                 rate ,
                                 yo,
