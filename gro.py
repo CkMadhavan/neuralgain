@@ -112,7 +112,7 @@ def pred(arg):
     
     keras.backend.clear_session()
     
-    pred = str(500*(round(c/500)))
+    pred = str(int(500*(round(c/500))))
 
     return pred
 
