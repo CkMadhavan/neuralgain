@@ -98,7 +98,7 @@ def pred(arg):
     
     print(rate)
     
-    model= load_model("Grocery1(2).h5")
+    model= load_model("Grocery2.h5")
     c = model.predict(np.concatenate((iv,
                                 rate ,
                                 yo,
@@ -112,7 +112,7 @@ def pred(arg):
     
     keras.backend.clear_session()
     
-    pred = str(int(math.ceil(c / 100.0)) * 100)
+    pred = str(500*(round(x/500)))
 
     return pred
 
